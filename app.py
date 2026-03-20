@@ -34,22 +34,18 @@ MURF_URL = "https://global.api.murf.ai/v1/speech/stream"
 # ==============================
 def get_safe_murf_voice(language, frontend_id):
     frontend_id_lower = frontend_id.lower()
-
-    is_female = any(name in frontend_id_lower for name in [
-        "aditi", "anya", "priya", "kavya", "lakshmi",
-        "shruti", "divya", "dharini", "venus"
-    ])
-
+    is_female = any(name in frontend_id_lower for name in ["aditi", "anya", "priya", "kavya", "lakshmi", "shruti", "divya", "dharini", "venus", "anisha", "khyati", "anusha", "alicia"])
+    
     guaranteed_voices = {
-        "English": {"male": "en-IN-aarav", "female": "en-IN-anya"},
-        "Hindi":   {"male": "hi-IN-rohan", "female": "hi-IN-kavya"},
-        "Telugu":  {"male": "te-IN-ram",   "female": "te-IN-shruti"},
-        "Tamil":   {"male": "ta-IN-surya", "female": "ta-IN-dharini"}
+        "English": {"male": "Nikhil", "female": "Anisha"},
+        "Hindi":   {"male": "Aman", "female": "Khyati"},
+        "Telugu":  {"male": "Ronnie", "female": "Anusha"},
+        "Tamil":   {"male": "Zion", "female": "Alicia"}
     }
-
+    
     safe_lang = language if language in guaranteed_voices else "English"
     gender = "female" if is_female else "male"
-
+    
     return guaranteed_voices[safe_lang][gender]
 
 # ==============================
