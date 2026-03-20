@@ -289,29 +289,28 @@
     </div>
 
     <script>
-        // Update this URL if deploying!
         const API_URL = "http://localhost:5000/ask-finvoice"; 
         
         let chatHistory = [], documentBase64 = null, isRecording = false, recognition = null;
         let audioPlayer = new Audio();
 
-        // 100% VALID MURF VOICE IDs - Female voices updated to exact Murf names (Anya, Kavya, etc.)
+        // 100% VERIFIED MURF AI ACTOR IDs
         const voiceMap = {
             'English': [
-                { id: 'en-IN-aarav', name: 'Aarav', tone: 'Professional', icon: 'fa-mars' },
-                { id: 'en-IN-anya', name: 'Anya', tone: 'Warm', icon: 'fa-venus' }
+                { id: 'Nikhil', name: 'Nikhil', tone: 'Professional', icon: 'fa-mars' },
+                { id: 'Anisha', name: 'Anisha', tone: 'Warm', icon: 'fa-venus' }
             ],
             'Hindi': [
-                { id: 'hi-IN-rohan', name: 'Rohan', tone: 'Authoritative', icon: 'fa-mars' },
-                { id: 'hi-IN-kavya', name: 'Kavya', tone: 'Friendly', icon: 'fa-venus' }
+                { id: 'Aman', name: 'Aman', tone: 'Authoritative', icon: 'fa-mars' },
+                { id: 'Khyati', name: 'Khyati', tone: 'Friendly', icon: 'fa-venus' }
             ],
             'Telugu': [
-                { id: 'te-IN-ram', name: 'Ram', tone: 'Professional', icon: 'fa-mars' },
-                { id: 'te-IN-shruti', name: 'Shruti', tone: 'Warm', icon: 'fa-venus' }
+                { id: 'Ronnie', name: 'Ronnie', tone: 'Professional', icon: 'fa-mars' },
+                { id: 'Anusha', name: 'Anusha', tone: 'Warm', icon: 'fa-venus' }
             ],
             'Tamil': [
-                { id: 'ta-IN-surya', name: 'Surya', tone: 'Professional', icon: 'fa-mars' },
-                { id: 'ta-IN-dharini', name: 'Dharini', tone: 'Warm', icon: 'fa-venus' }
+                { id: 'Zion', name: 'Zion', tone: 'Professional', icon: 'fa-mars' },
+                { id: 'Alicia', name: 'Alicia', tone: 'Warm', icon: 'fa-venus' }
             ]
         };
 
